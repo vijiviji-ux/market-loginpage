@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supermarket</title>
+  <link rel="icon" href="./images/bg1.png">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>WELCOME!</h1>
+    </header>
+
+    <!-- Ticket Booking Form -->
+    <section class="booking-section">
+      <h2>Supermarket Login</h2>
+      <form class="booking-form">
+        <!-- username -->
+         <input type="username" id="username" placeholder="Enter your Username" required>
+         <span id="user_error" style="color: red; font-size: 14px;"></span>
+
+
+        <!-- Mobile Number -->
+        <input type="tel" id="mobilenumber" placeholder="Enter Mobile Number"   pattern="[0-9]{10}" required>
+        <span id="user_error" style="color: #e50914;"></span>
+        
+
+        <!-- Movie Selection -->
+        <select id="items" required>
+          <option value="" disabled selected>Select a Items</option>
+          <option value="rice">Rice</option>
+          <option value="milk">Milk</option>
+          <option value="fruits">Fruits</option>
+          <option value="shoap">Shoap</option>
+        </select>
+
+        <!-- Date Selection -->
+        <!-- <input type="date" id="date"  required> -->
+
+        <!-- Number of Tickets -->
+        <input type="number" id="quantity"  placeholder="Number of quantity" min="1" max="10"   required>
+
+        <!-- OTP Field -->
+        <input type="text" id="gst" placeholder="Enter gst" pattern="[0-9]{4,6}"   required>
+
+        <!-- Book Now Button -->
+        <button type="button" onclick="ordersumbit()">submit</button>
+      </form>
+    </section>
+    <!-- <button id="output" style="background-color: #e50914; color: white; margin-left: 25%; padding: 10px; border-radius: 3px; border: none; "></button> -->
+    <!-- output table  -->
+    <section class="output-section">
+        <h2>Order Summary</h2>
+        <table border="1" id="output-table" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; border-collapse: collapse;" >
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Mobile Number</th>
+              <th>Item</th>
+              <th>Quantity</th>
+              <th>Total (with GST)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be dynamically added here -->
+          </tbody>
+        </table>
+      </section>
+
+
+  </div>
+ 
+
+
+  <script src="./javascript/main.js"></script>
+</body>
+</html>
